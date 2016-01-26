@@ -75,11 +75,13 @@ var styles = StyleSheet.create({
   footer: {
     flex: 1
   },
-  timerWrapper: {
-    flex: 5
+  timerWrapper: {    //  with flex you can use whatever ratios you want to distribute screen space.
+    flex: 5  // takes up 5/8ths of available space
   },
   buttonWrapper: {
-    flex: 3
+    flex: 3,  // takes up 3/8ths of available space
+    flexDirection: 'row',  //  makes elements line up horizontally in this wrapper
+    justifyContent: 'space-around'  // give elements an equal amount of space between eachother.
   }
 });
 
