@@ -4,6 +4,7 @@ var {
   Text,
   View,
   AppRegistry,
+  TouchableHighlight,
   StyleSheet
 } = React;
 
@@ -40,11 +41,11 @@ var StopWatch = React.createClass({
   },
 
   startStopButton: function() {
-    return <View>
+    return <TouchableHighlight>
         <Text>
           Start
         </Text>
-      </View>
+      </TouchableHighlight>
   },
 
   lapButton: function() {
@@ -76,12 +77,15 @@ var styles = StyleSheet.create({
     flex: 1
   },
   timerWrapper: {    //  with flex you can use whatever ratios you want to distribute screen space.
-    flex: 5  // takes up 5/8ths of available space
+    flex: 5,  // takes up 5/8ths of available space
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   buttonWrapper: {
     flex: 3,  // takes up 3/8ths of available space
     flexDirection: 'row',  //  makes elements line up horizontally in this wrapper
-    justifyContent: 'space-around'  // give elements an equal amount of space between eachother.
+    justifyContent: 'space-around',  // give elements an equal amount of space between eachother.
+    alignItems: 'center'  // centers the buttons vertically, dependant on flexDirection, if column than this would center horizontally.
   }
 });
 
