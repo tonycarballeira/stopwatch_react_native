@@ -15,22 +15,22 @@ var StopWatch = React.createClass({
   render: function() {
     return <View style={styles.container}>
 
-      <View style={styles.header}>  
+      <View style={[styles.header, this.border('yellow')]}>  
 
-        <View> 
+        <View style={this.border('red')}> 
           <Text>
             00:00.00
           </Text>
         </View>
         
-        <View> 
+        <View style={this.border('green')}> 
           { this.startStopButton() }
           { this.lapButton() }
         </View>
         
       </View> 
 
-      <View style={styles.footer}>  
+      <View style={[styles.footer, this.border('blue')]}>  
         <Text>
           I am a list of laps.
         </Text>
@@ -53,17 +53,24 @@ var StopWatch = React.createClass({
           Lap
         </Text>
       </View>
+  },
+
+  border: function(color) {
+    return {
+      borderColor: color,
+      borderWidth: 4
+    }
   }
 
 }); 
 
 var styles = StyleSheet.create({
   container: {
-    flex: 1, // file the entire screen
+    flex: 1, // fill the entire screen
     alignItems: 'stretch',
   },
   header: {
-    flex: 1
+    flex: 1  //making both the header and footer section flex 1 makes bothe areas share half the screen. top and bottom.
   },
   footer: {
     flex: 1
