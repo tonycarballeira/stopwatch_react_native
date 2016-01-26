@@ -54,7 +54,7 @@ var StopWatch = React.createClass({
             onPress={this.handleStartPress} 
             style={[styles.button, styles.startButton]}>
         <Text>
-          Start
+          { this.state.running ? 'Stop' : 'Start' }
         </Text>
       </TouchableHighlight>
   },
