@@ -1,4 +1,5 @@
 var React = require('react-native');
+var formatTime = require('minutes-seconds-milliseconds');
 
 var {
   Text,
