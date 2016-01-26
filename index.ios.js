@@ -13,6 +13,12 @@ var {
 
 var StopWatch = React.createClass({
 
+  getInitialState: function() {
+    return {
+      timeElapsed: null
+    }
+  },
+
   render: function() {
     return <View style={styles.container}>
 
@@ -54,6 +60,13 @@ var StopWatch = React.createClass({
           Lap
         </Text>
       </View>
+  },
+
+  handleStartPress: function() {
+    
+    var startTime = new Date();
+
+
   },
 
   border: function(color) {
