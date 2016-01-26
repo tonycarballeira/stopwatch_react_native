@@ -26,7 +26,7 @@ var StopWatch = React.createClass({
 
         <View style={[styles.timerWrapper, this.border('red')]}> 
           <Text>
-            00:00.00
+            {this.state.timeElapsed}
           </Text>
         </View>
         
@@ -66,6 +66,12 @@ var StopWatch = React.createClass({
     
     var startTime = new Date();
 
+    setInterval(() => {
+      // update our state with some new value  never do: this.state.timeElapsed = some_value
+      this.setState({
+        timeElapsed: new Date() - startTime
+      });
+    }, 30);
 
   },
 
