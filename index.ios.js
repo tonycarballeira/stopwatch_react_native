@@ -17,7 +17,8 @@ var StopWatch = React.createClass({
   getInitialState: function() {
     return {
       timeElapsed: null,
-      running: false
+      running: false,
+      startTime: null
     }
   },
 
@@ -79,12 +80,13 @@ var StopWatch = React.createClass({
     }
     
     
-    var startTime = new Date();
+    // var startTime = new Date();
+    this.setState({ startTime: new Date() });
 
     this.interval = setInterval(() => {
       // update our state with some new value  never do: this.state.timeElapsed = some_value
       this.setState({
-        timeElapsed: new Date() - startTime,
+        timeElapsed: new Date() - this.state.startTime,
         running: true
       });
     }, 30);
