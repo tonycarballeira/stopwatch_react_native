@@ -27,7 +27,7 @@ var StopWatch = React.createClass({
 
         <View style={[styles.timerWrapper, this.border('red')]}> 
           <Text>
-            {this.state.timeElapsed}
+            {formatTime(this.state.timeElapsed)}
           </Text>
         </View>
         
