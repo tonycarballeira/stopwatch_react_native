@@ -26,7 +26,7 @@ var StopWatch = React.createClass({
       <View style={[styles.header, this.border('yellow')]}>  
 
         <View style={[styles.timerWrapper, this.border('red')]}> 
-          <Text>
+          <Text style={styles.timer}>
             {formatTime(this.state.timeElapsed)}
           </Text>
         </View>
@@ -106,6 +106,9 @@ var styles = StyleSheet.create({
     flexDirection: 'row',  //  makes elements line up horizontally in this wrapper
     justifyContent: 'space-around',  // give elements an equal amount of space between eachother.
     alignItems: 'center'  // centers the buttons vertically, dependant on flexDirection, if column than this would center horizontally.
+  },
+  timer: {
+    fontSize: 60
   }
 });
 
