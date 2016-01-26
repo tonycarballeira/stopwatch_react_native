@@ -16,7 +16,8 @@ var StopWatch = React.createClass({
 
   getInitialState: function() {
     return {
-      timeElapsed: null
+      timeElapsed: null,
+      running: false
     }
   },
 
@@ -67,13 +68,21 @@ var StopWatch = React.createClass({
   },
 
   handleStartPress: function() {
+
+    if(this.state.running){
+      clearInterval(this.interval);
+      this.setState({running: false});
+      return   // this is so the handleStartPress function does not contiune to run the code below (instead you exit the function)
+    }
+    
     
     var startTime = new Date();
 
-    setInterval(() => {
+    this.interval = setInterval(() => {
       // update our state with some new value  never do: this.state.timeElapsed = some_value
       this.setState({
-        timeElapsed: new Date() - startTime
+        timeElapsed: new Date() - startTime,
+        running: true
       });
     }, 30);
 
