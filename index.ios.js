@@ -13,9 +13,9 @@ var {
 var StopWatch = React.createClass({
 
   render: function() {
-    return <View>
+    return <View style={styles.container}>
 
-      <View>  
+      <View style={styles.header}>  
 
         <View> 
           <Text>
@@ -30,7 +30,7 @@ var StopWatch = React.createClass({
         
       </View> 
 
-      <View>  
+      <View style={styles.footer}>  
         <Text>
           I am a list of laps.
         </Text>
