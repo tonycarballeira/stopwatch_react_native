@@ -15,20 +15,26 @@ var StopWatch = React.createClass({
   render: function() {
     return <View>
 
-      <View>  //yellow
+      <View>  
 
-        <View> // red
+        <View> 
           <Text>
             00:00.00
           </Text>
         </View>
         
-        <View> //green
+        <View> 
           { this.startStopButton() }
           { this.lapButton() }
         </View>
         
-      </View>      
+      </View> 
+
+      <View>  
+        <Text>
+          I am a list of laps.
+        </Text>
+      </View>     
 
     </View>
   },
@@ -52,7 +58,16 @@ var StopWatch = React.createClass({
 }); 
 
 var styles = StyleSheet.create({
-
+  container: {
+    flex: 1, // file the entire screen
+    alignItems: 'stretch',
+  },
+  header: {
+    flex: 1
+  },
+  footer: {
+    flex: 1
+  }
 });
 
 
